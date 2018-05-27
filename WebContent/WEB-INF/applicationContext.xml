@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+			http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>/WEB-INF/app.properties</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver"></property>
+		<property name="url" value="jdbc:postgresql://localhost:5432/KBMC Database"></property>
+		<property name="username" value="postgres"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.PostgreSQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.kbmc.model.UserRole</value>
+				<value>com.kbmc.model.User</value>
+				<value>com.kbmc.model.Role</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="UserRoleDAO" class="com.kbmc.dao.impl.UserRoleDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserDAO" class="com.kbmc.dao.impl.UserDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RoleDAO" class="com.kbmc.dao.impl.RoleDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="userManageService" class="com.kbmc.service.impl.UserManageServiceImpl">
+		<property name="userDAO" ref="UserDAO" />
+		<property name="roleDAO" ref="RoleDAO" />
+		<property name="userRoleDAO" ref="UserRoleDAO" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="velocityEngine" ref="velocityEngine"/>
+		<property name="from" value="${mail.from}" />
+		<property name="subject" value="${mail.subject}" />
+	</bean>
+	<bean id="manageUserSegmentService" class="com.kbmc.service.impl.ManageUserSegmentServiceImpl">
+             <property name="segmentService" ref="segmentService" />
+	</bean>
+	<bean id="manageLocationService" class="com.kbmc.service.impl.ManageLocationServiceImpl">
+
+	</bean>
+	<bean id="segmentService" class="com.kbmc.service.impl.SegmentServiceImpl">
+
+	</bean>
+	<bean id="manageOffersService" class="com.kbmc.service.impl.ManageOffersServiceImpl">
+
+	</bean>
+	<bean id="manageArrangementsService" class="com.kbmc.service.impl.ManageArrangementsServiceImpl">
+	
+	</bean>
+	<bean id="manageCollectionsService" class="com.kbmc.service.impl.ManageCollectionsServiceImpl">
+	</bean> 
+	<bean id="manageChannelTypesService" class="com.kbmc.service.impl.ManageChannelTypesServiceImpl">
+	</bean> 
+	
+	<bean id="manageChannelsService" class="com.kbmc.service.impl.ManageChannelsServiceImpl">
+	<property name="manageChannelTypesService" ref="manageChannelTypesService"/>
+	</bean> 
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${mail.host}" />
+		<property name="port" value="${mail.port}" />
+		<property name="username" value="${mail.username}" />
+		<property name="password" value="${mail.password}" />
+
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="velocityEngine"
+		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="resourceLoaderPath" value="/WEB-INF/resources/" />
+	</bean>
+	
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="com.kbmc.model">admin/GenericExceptionPage</prop>
+				<prop key="java.lang.Exception">admin/error</prop> 
+			</props>
+		</property>
+	</bean>
+</beans>

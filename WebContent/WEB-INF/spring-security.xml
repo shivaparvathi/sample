@@ -1,0 +1,30 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<beans:bean id="mySuccessHandler" class="com.kbmc.service.impl.RoleCheck"></beans:bean>
+
+	<http auto-config="true">
+		<intercept-url pattern="/admin/**" access="ROLE_Administrator"/>
+		<intercept-url pattern="/walletManager/**" access="ROLE_Wallet Manager" />
+		<intercept-url pattern="/channelManager/**" access="ROLE_Channel Manager" />
+		<form-login login-page="/login"
+			authentication-success-handler-ref="mySuccessHandler"
+			authentication-failure-url="/loginfailed" />
+		<logout logout-success-url="/login" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<password-encoder hash="md5" />
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="select username,password,enabled from kbmc.user where username=?"
+				authorities-by-username-query="
+		      select us.username,rr.name from kbmc.role as rr,kbmc.user_role as ur ,kbmc.user as us where us.id = ur.user_id and ur.role_id = rr.id and us.username=?" />
+		</authentication-provider>
+	</authentication-manager>
+
+</beans:beans>

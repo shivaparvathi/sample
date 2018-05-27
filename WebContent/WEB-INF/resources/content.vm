@@ -1,0 +1,107 @@
+
+<div>
+<table cellspacing='0' cellpadding='0' border='0' bgcolor='ffffff'>
+<tbody><tr><td width='540' height='30'>&nbsp;</td></tr>
+<tr><td valign='top' align='center'>
+<table width='540' cellspacing='0' cellpadding='0' border='0'>
+<tbody><tr><td width='30'></td><td width='480'>
+
+  <table width='480' cellspacing='0' cellpadding='0' border='0'>
+  <tbody><tr>
+    <td width='15' bgcolor='#fbfbfb' height='15' rowspan='3'><img width='15' height='15' style='display:block;min-height:15px' src='${appURL}/resources/images/tlc.jpg' alt=''></td>
+    <td width='450' bgcolor='#fbfbfb' height='1'></td>
+    <td width='15' bgcolor='#fbfbfb' height='15' rowspan='3'><img width='15' height='15' style='display:block;min-height:15px' src='${appURL}/resources/images/trc.jpg' alt=''></td>
+  </tr>
+  <tr><td width='450' bgcolor='#e6e6e6' height='1'></td></tr>
+  <tr><td width='450' bgcolor='#f0f0f0' height='12'></td></tr>
+  </tbody></table>
+
+  <table width='480' cellspacing='0' cellpadding='0' border='0'>
+  <tbody><tr>
+    <td width='1' bgcolor='#fbfbfb' rowspan='4'></td><td width='1' bgcolor='#f6f6f6' rowspan='4'></td><td width='1' bgcolor='#e6e6e6' rowspan='4'></td>
+    <td width='474' bgcolor='#f0f0f0'>
+      <table width='474' cellspacing='0' cellpadding='0' border='0'>
+      <tbody><tr>
+        <td width='15'></td>
+        <td width='409'>
+          <span style='font-family:Arial,Helvetica,sans-serif;font-size:20px;color:#444;font-weight:bold'>Forgot Your Password?</span>
+        </td>
+        <td width='38'><img width='38' height='38' style='display:block;min-height:38px' src='${appURL}/resources/images/kohls.jpg' alt='Kohls'></td>
+        <td width='12'></td>
+      </tr>
+      </tbody></table>
+    </td>
+    <td width='1' bgcolor='#e6e6e6' rowspan='4'></td><td width='1' bgcolor='#f6f6f6' rowspan='4'></td><td width='1' bgcolor='#fbfbfb' rowspan='4'></td>
+  </tr>
+  <tr><td width='474' bgcolor='#f0f0f0' height='15'></td></tr><tr><td width='474' bgcolor='#e6e6e6' height='1'></td></tr><tr><td width='474' bgcolor='#ffffff' height='1'></td></tr>
+  </tbody></table>
+
+  <table width='480' cellspacing='0' cellpadding='0' border='0'>
+  <tbody><tr>
+    <td width='1' bgcolor='#fbfbfb' rowspan='4'></td><td width='1' bgcolor='#f6f6f6' rowspan='4'></td><td width='1' bgcolor='#e6e6e6' rowspan='4'></td>
+    <td width='474' bgcolor='#ffffff'>
+      <table width='474' cellspacing='0' cellpadding='0' border='0'>
+      <tbody><tr>
+        <td width='15' rowspan='5'></td>
+        <td width='444' height='1'></td>
+        <td width='15' rowspan='5'></td>
+      </tr>
+      <tr>
+        <td width='444'>
+            <p style='font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#444;line-height:17px'>Follow the link below to reset your KBMC Account password:</p>
+
+        </td>
+      </tr>
+      <tr><td>
+        <table cellspacing='0' cellpadding='0' border='0' bgcolor='#54a5e2'>
+        <tbody><tr>
+          <td width='10'><img width='10' height='30' style='display:block;min-height:30px' src='${appURL}/resources/images/btnl.jpg' alt=''></td>
+          <td height='30'>  <span style='font-family:Arial,Helvetica,sans-serif;font-size:12px'>
+    <a target='_blank' title='Reset my password' style='color:#fff;text-decoration:none' href='${msg}'>
+      <span style='color:#fff'>Reset my password</span>
+</a>  </span>
+</td>
+          <td width='10'><img width='10' height='30' style='display:block;min-height:30px' src='${appURL}/resources/images/btnr.jpg' alt=''></td>
+        </tr>
+        </tbody></table>
+      </td></tr>
+      <tr><td>
+          <p style='font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#444;line-height:17px'>If you didn’t request this, please ignore this email. Your password won’t change until you access the link above and create a new one.</p>
+
+        <p style='font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#444;line-height:17px;font-weight:bold'>The Kohl's Team</p>
+      </td></tr>
+      <tr><td width='444' height='1'></td></tr>
+      </tbody></table>
+    </td>
+    <td width='1' bgcolor='#e6e6e6' rowspan='4'></td><td width='1' bgcolor='#f6f6f6' rowspan='4'></td><td width='1' bgcolor='#fbfbfb' rowspan='4'></td>
+  </tr>
+  </tbody></table>
+
+  <table width='480' cellspacing='0' cellpadding='0' border='0'>
+  <tbody><tr>
+    <td width='15' bgcolor='#ffffff' height='15' rowspan='5'><img width='15' height='15' style='display:block;min-height:15px' src='${appURL}/resources/images/blc.jpg' alt=''></td>
+    <td width='450' bgcolor='#ffffff' height='11'></td>
+    <td width='15' bgcolor='#ffffff' height='15' rowspan='5'><img width='15' height='15' style='display:block;min-height:15px' src='${appURL}/resources/images/brc.jpg' alt=''></td>
+  </tr>
+  <tr><td width='450' bgcolor='#e6e6e6' height='1'></td></tr>
+  <tr><td width='450' bgcolor='#f1f1f1' height='1'></td></tr>
+  <tr><td width='450' bgcolor='#f6f6f6' height='1'></td></tr>
+  <tr><td width='450' bgcolor='#fbfbfb' height='1'></td></tr>
+  </tbody></table>
+
+</td></tr></tbody></table>
+</td></tr>
+
+<tr><td><p style='font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#666;line-height:13px;text-align:center'>
+  This is an automated email that has been sent to you as a result of actions taken at
+
+  <a target='_blank' href='${appURL}/'><span style='font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#54a5e2;line-height:13px;text-decoration:underline'>KBMC Login</span></a>.
+  <br>
+  Copyright 2013, Kohl's Stores.
+  <a target='_blank' title='UNITY: Terms of Service' href=''><span style='font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#54a5e2;line-height:13px;text-decoration:underline;white-space:nowrap'>Terms of Service</span></a>.
+  <a target='_blank' title='UNITY: Privacy Policy' href=''><span style='font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#54a5e2;line-height:13px;text-decoration:underline;white-space:nowrap'>Privacy Policy</span></a>.
+</p></td></tr>
+
+<tr><td width='540' height='30'>&nbsp;</td></tr>
+</tbody></table>
+</div>
